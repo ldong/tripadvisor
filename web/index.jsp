@@ -23,7 +23,12 @@
 <body>
 
 <% // java code
-  String s = request.getAttribute("cachedWebsite").toString();
+  String s;
+  if(request.getAttribute("cachedWebsite") != null){
+    s= request.getAttribute("cachedWebsite").toString();
+  } else {
+    s = "Hi";
+  }
 %>
 
   <form action="cache">

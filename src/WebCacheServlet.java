@@ -1,3 +1,5 @@
+import com.firebase.client.Firebase;
+
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -6,6 +8,13 @@ import java.io.PrintWriter;
  * Created by ldong on 11/30/14.
  */
 public class WebCacheServlet extends javax.servlet.http.HttpServlet {
+    private static LRU lruCache;
+    private static Firebase firebase;
+    static {
+        lruCache = new LRU();
+        firebase = new Firebase("https://tripadvisorminiproj.firebaseio.com");
+    }
+
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
 
     }
@@ -31,7 +40,14 @@ public class WebCacheServlet extends javax.servlet.http.HttpServlet {
 //        HttpSession session = request.getSession();
 
         //set your session variable here
-        request.setAttribute("cachedWebsite", "HELLOWORLD123213");
+        CacheWebsite web = new CacheWebsite(website, date);
+        String content;
+        if(lruCache.get(web) != null){
+            content = (String)lruCache.get(web);
+        } else { // Not Found locally
+            content = "";
+        }
+        request.setAttribute("cachedWebsite", content);
 //        response.sendRedirect("/index.jsp");
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }

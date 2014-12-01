@@ -10,6 +10,7 @@
       <root url="jar://$PROJECT_DIR$/lib/javax.servlet.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/javax.persistence.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/javax.servlet.jsp.jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/firebase-client-android-2.0.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
