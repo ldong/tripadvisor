@@ -37,7 +37,8 @@ System:
 purpose of simplicity, I will use LinkedHashMap with fixed size 10.
 
 Alternatives:
-1. [Guava Cache](http://goo.gl/PDVz9).
-2. [Apache MemLRU](http://goo.gl/4MLpWJ).
+
+    1. [Guava Cache](http://goo.gl/PDVz9).
+    2. [Apache MemLRU](http://goo.gl/4MLpWJ).
 
 3. Sample NoSQL DB schema is [here](./resource/document.json)
