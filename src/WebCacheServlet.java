@@ -3,6 +3,7 @@ import com.firebase.client.Firebase;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 
 /**
  * Created by ldong on 11/30/14.
@@ -46,6 +47,24 @@ public class WebCacheServlet extends javax.servlet.http.HttpServlet {
             content = (String)lruCache.get(web);
         } else { // Not Found locally
             content = "";
+            Date d;
+            for (int i = 0; i < Util.DAYS; i++) {
+                d = Util.getDateXDaysBeforeDateY(i, web.getDate());
+                web = new CacheWebsite(website, d);
+                if(lruCache.get(web) != null) {
+                    content = (String) lruCache.get(web);
+                    break;
+                } else {
+                    // fetch from Database
+                    firebase.getRoot();
+                    // if found
+                    // update cache
+                    lruCache.put(web, d);
+                    break;
+                }
+            }
+            // content to be the root of
+            content = firebase.getRoot();
         }
         request.setAttribute("cachedWebsite", content);
 //        response.sendRedirect("/index.jsp");

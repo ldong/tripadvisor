@@ -11,7 +11,7 @@ public class CacheWebsite implements Serializable {
     public Date date;
 
     /**
-     * Constructor
+     * Constructor with URL and String
      * @param url
      * @param date
      */
@@ -24,6 +24,17 @@ public class CacheWebsite implements Serializable {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Constructor with URL and Date
+     * @param url
+     * @param date
+     */
+    public CacheWebsite(String url, Date date) {
+        this.url = url;
+        this.date = date;
+    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -43,6 +54,14 @@ public class CacheWebsite implements Serializable {
         int result = url.hashCode();
         result = 31 * result + date.hashCode();
         return result;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public Date getDate() {
+        return date;
     }
 
     public String toString(){
