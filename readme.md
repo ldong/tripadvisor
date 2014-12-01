@@ -19,6 +19,7 @@ User:
 System:
 
 1. If the URL+date has been cached into the memory
+
        -> If yes, it will render that specific version
 
        -> If no, it will fetch the data from the database for that specific version
