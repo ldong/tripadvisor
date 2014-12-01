@@ -10,10 +10,9 @@ import java.util.Date;
  */
 public class WebCacheServlet extends javax.servlet.http.HttpServlet {
     private static LRU lruCache;
-    private static Firebase firebase;
+    private Mongo
     static {
         lruCache = new LRU();
-        firebase = new Firebase("https://tripadvisorminiproj.firebaseio.com");
     }
 
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
@@ -56,7 +55,6 @@ public class WebCacheServlet extends javax.servlet.http.HttpServlet {
                     break;
                 } else {
                     // fetch from Database
-                    firebase.getRoot();
                     // if found
                     // update cache
                     lruCache.put(web, d);
@@ -64,7 +62,6 @@ public class WebCacheServlet extends javax.servlet.http.HttpServlet {
                 }
             }
             // content to be the root of
-            content = firebase.getRoot();
         }
         request.setAttribute("cachedWebsite", content);
 //        response.sendRedirect("/index.jsp");

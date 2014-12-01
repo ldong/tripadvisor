@@ -5,7 +5,7 @@
 2. Intellij 14.0.1
 3. Java 8
 4. Tomcat: 8.0.15
-5. ~~MySQL 5.6.21~~, Firebase
+5. ~~MySQL 5.6.21~~, ~~Firebase~~, MongoDB
 
 ## Instruction
 1. Install the above packages are essential
