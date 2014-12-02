@@ -62,20 +62,20 @@ Insert DB
 var a =  {
     "web": "tripadvisor.com",
     "versions": {
-      "11/1/2014": "someContent1",
-      "11/2/2014": "someContent2",
-      "11/3/2014": "someContent3",
-      "11/4/2014": "someContent4",
+      "11/01/2014": "someContent1",
+      "11/02/2014": "someContent2",
+      "11/03/2014": "someContent3",
+      "11/04/2014": "someContent4",
       "current": "content"
     }
   };
 var b = {
     "web": "tripadvisor2.com",
     "versions": {
-      "11/1/2014": "someContent1",
-      "11/2/2014": "someContent2",
-      "11/3/2014": "someContent3",
-      "11/4/2014": "someContent4",
+      "11/01/2014": "someContent1",
+      "11/02/2014": "someContent2",
+      "11/03/2014": "someContent3",
+      "11/04/2014": "someContent4",
       "current": "content"
     }
   };

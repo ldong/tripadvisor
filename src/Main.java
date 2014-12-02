@@ -1,6 +1,8 @@
 import com.mongodb.*;
 
 import java.net.UnknownHostException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Set;
 
@@ -36,15 +38,13 @@ public class Main {
             // or, to connect to a replica set, with auto-discovery of the primary, supply a seed list of members
             DB db = mongoClient.getDB("webs");
             Set<String> colls = db.getCollectionNames();
-            for (String s : colls) {
-                System.out.println(s);
-            }
+//            for (String s : colls) {
+//                System.out.println(s);
+//            }
             DBCollection coll = db.getCollection("webs");
-            DBObject myDoc = coll.findOne();
+//            DBObject myDoc = coll.findOne();
 //            System.out.println(myDoc);
 //            System.out.println(myDoc.get("versions"));
-
-
             BasicDBObject query = new BasicDBObject();
             query.put("web", "tripadvisor.com");
             DBCursor cursor = coll.find(query);
@@ -53,8 +53,12 @@ public class Main {
                 DBObject curr = cursor.next();
                 System.out.println(curr.get("web"));
                 LinkedHashMap<String, String> list = (LinkedHashMap<String, String>) curr.get("versions");
-                System.out.println(list.get("current"));
-                System.out.println(list.get("11/2/2014"));
+                String str = list.get("11/2/2014");
+                if(str == null){
+                    System.out.println(list.get("current"));
+                } else {
+                    System.out.println(str);
+                }
             }
             System.out.println("Done");
         } catch (UnknownHostException e) {
@@ -63,5 +67,16 @@ public class Main {
             mongoClient.close();
         }
 
+        Date d = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        System.out.println(d);
+        System.out.println(dateFormat.format(d));
+
+        try {
+            System.out.println("Start");
+            System.out.println(Util.getContentFromUrlByDates("tripadvisor.com", "1/2/2014"));
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
     }
 }

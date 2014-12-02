@@ -1,9 +1,8 @@
 /**
  * Created by ldong on 12/1/14.
  */
+
 import java.io.Serializable;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class CacheWebsite implements Serializable {
@@ -12,21 +11,18 @@ public class CacheWebsite implements Serializable {
 
     /**
      * Constructor with URL and String
+     *
      * @param url
      * @param date
      */
     public CacheWebsite(String url, String date) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-        try {
-            this.url = url;
-            this.date = dateFormat.parse(date);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        this.url = url;
+        this.date = Util.convertStringToDate(date);
     }
 
     /**
      * Constructor with URL and Date
+     *
      * @param url
      * @param date
      */
@@ -64,7 +60,7 @@ public class CacheWebsite implements Serializable {
         return date;
     }
 
-    public String toString(){
-        return "URL: "+url+ " Date: "+date;
+    public String toString() {
+        return "URL: " + url + " Date: " + date;
     }
 }
