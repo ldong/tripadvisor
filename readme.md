@@ -44,6 +44,14 @@ Alternatives:
 
 3. Sample NoSQL DB schema is [here](./resource/document.json)
 
+Question: why choose **MongoDB** over MySQL?
+
+Because I know NoSQL is distribute-friendly for sure, don't know about SQL.
+Also, NoSQL is easier to setup for document based storage, which fits perfectly
+for this assignment.
+
+## Setup the DB
+
 ``` bash
 mkdir -p ~/data/db
 mongod --dbpath ~/data/db
