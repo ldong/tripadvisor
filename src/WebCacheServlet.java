@@ -1,4 +1,3 @@
-import com.firebase.client.Firebase;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
@@ -10,7 +9,7 @@ import java.util.Date;
  */
 public class WebCacheServlet extends javax.servlet.http.HttpServlet {
     private static LRU lruCache;
-    private Mongo
+//    private Mongo
     static {
         lruCache = new LRU();
     }

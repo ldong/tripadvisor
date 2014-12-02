@@ -5,7 +5,7 @@
 2. Intellij 14.0.1
 3. Java 8
 4. Tomcat: 8.0.15
-5. ~~MySQL 5.6.21~~, ~~Firebase~~, MongoDB
+5. ~~MySQL 5.6.21~~, ~~Firebase~~, MongoDB:
 
 ## Instruction
 1. Install the above packages are essential
@@ -42,3 +42,51 @@ Alternatives:
     2. [Apache MemLRU](http://goo.gl/4MLpWJ).
 
 3. Sample NoSQL DB schema is [here](./resource/document.json)
+
+``` bash
+mkdir -p ~/data/db
+mongod --dbpath ~/data/db
+mongo
+```
+
+Once in Mongo
+``` bash
+show dbs
+use tp
+db
+
+```
+
+Insert DB
+``` javascript
+var a =  {
+    "web": "tripadvisor.com",
+    "versions": {
+      "11/1/2014": "someContent1",
+      "11/2/2014": "someContent2",
+      "11/3/2014": "someContent3",
+      "11/4/2014": "someContent4",
+      "current": "content"
+    }
+  };
+var b = {
+    "web": "tripadvisor2.com",
+    "versions": {
+      "11/1/2014": "someContent1",
+      "11/2/2014": "someContent2",
+      "11/3/2014": "someContent3",
+      "11/4/2014": "someContent4",
+      "current": "content"
+    }
+  };
+db.webs.insert(a);
+db.webs.insert(b);
+db.webs.find();
+```
+
+db.webs.find({
+    $and: [
+        {"web" : "tripadvisor2.com"},
+        {versions."11/1/2014"}
+    ]
+})

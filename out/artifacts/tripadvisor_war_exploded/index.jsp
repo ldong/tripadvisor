@@ -32,9 +32,11 @@
 %>
 
   <form action="cache">
-    <p>Website <input type="text" name="website" id="website"></p>
-    <p>Date: <input type="text" name="date" id="datepicker"></p>
-    <input type="submit" value="submit">
+    <p>
+      Website <input type="text" name="website" id="website">
+      Date: <input type="text" name="date" id="datepicker">
+      <input type="submit" value="submit">
+    </p>
   </form>
   <p>Web Content</p>
   <div id="webcontent">Content: <%=s%></div>
