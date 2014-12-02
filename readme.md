@@ -92,12 +92,29 @@ db.webs.remove({})
 
 ## Walk through
 There's one assumption I have for crawler will dump the data into the DB.
-So I could fetch it from DB for the first time, after the first time fetch.
-I have put it into LRU cache. See codes for implementation details.
+So I could fetch it from DB for the first time. After the first time fetch,
+I have put it into LRU cache to avoid future wasteful operations.
+
+See [codes](./src) for implementation details.
 
 Anyway, please see [demo](./demo/demo.mp4)
 
 
 #Reference
+[Creating a simple Web application and deploying it to Tomcat]
+(http://goo.gl/WPcz40)
+
+[Configuring & Using Apache Tomcat]
+(http://www.coreservlets.com/Apache-Tomcat-Tutorial/)
+
+[Getting Started with Java Driver]
+(http://docs.mongodb.org/ecosystem/tutorial/getting-started-with-java-driver/)
+
+[Inserting and updating]
+(http://mongodb.github.io/node-mongodb-native/markdown-docs/insert.html)
+
 [Remove Documents]
 (http://docs.mongodb.org/manual/tutorial/remove-documents/)
+
+[db.collection.remove]
+(http://docs.mongodb.org/manual/reference/method/db.collection.remove/)
