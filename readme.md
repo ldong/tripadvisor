@@ -71,21 +71,21 @@ Insert DB
 var a =  {
     "web": "tripadvisor.com",
     "versions": {
-      "11/01/2014": "someContent1",
-      "11/02/2014": "someContent2",
-      "11/03/2014": "someContent3",
-      "11/04/2014": "someContent4",
-      "current": "content"
+      "11/01/2014": "This Content will be added by crawler(NOT implmented here): Fake Data1",
+      "11/02/2014": "This Content will be added by crawler(NOT implmented here): Fake Data2",
+      "11/03/2014": "This Content will be added by crawler(NOT implmented here): Fake Data3",
+      "11/04/2014": "This Content will be added by crawler(NOT implmented here): Fake Data4",
+      "current": "This Content will be added by crawler(NOT implmented here): Fake Data5"
     }
   };
 var b = {
     "web": "tripadvisor2.com",
     "versions": {
-      "11/01/2014": "someContent1",
-      "11/02/2014": "someContent2",
-      "11/03/2014": "someContent3",
-      "11/04/2014": "someContent4",
-      "current": "content"
+      "11/01/2014": "This Content will be added by crawler(NOT implmented here): Fake Data1",
+      "11/02/2014": "This Content will be added by crawler(NOT implmented here): Fake Data2",
+      "11/03/2014": "This Content will be added by crawler(NOT implmented here): Fake Data3",
+      "11/04/2014": "This Content will be added by crawler(NOT implmented here): Fake Data4",
+      "current": "This Content will be added by crawler(NOT implmented here): Fake Data5"
     }
   };
 db.webs.insert(a);
