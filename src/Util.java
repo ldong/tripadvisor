@@ -1,6 +1,7 @@
 import java.net.UnknownHostException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Set;
@@ -13,7 +14,7 @@ import com.mongodb.*;
 
 
 public class Util {
-    public static int MAX_NUMBER_DAYS_OF_HISTORY = 14;
+    public static int MAX_NUMBER_DAYS_OF_HISTORY = 30;
     public static Date getDateXDaysBeforeDateY(int x, Date y){
         // 24 hrs in presentation of Epoch
         long day = 86400000;
@@ -35,6 +36,13 @@ public class Util {
             e.printStackTrace();
         }
         return date;
+    }
+
+
+    public static CacheWebsiteContentTuple generateCacheWebsiteContentTupleFromUrlAndDate(String url, String date) throws UnknownHostException {
+        String content = getContentFromUrlByDates(url, date);
+        CacheWebsiteContentTuple tuple = new CacheWebsiteContentTuple(url, date, content);
+        return tuple;
     }
 
     public static String getContentFromUrlByDates(String url, String date) throws UnknownHostException {

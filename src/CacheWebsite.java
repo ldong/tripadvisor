@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class CacheWebsite implements Serializable {
     public String url;
-    public Date date;
+    public String date;
 
     /**
      * Constructor with URL and String
@@ -17,7 +17,7 @@ public class CacheWebsite implements Serializable {
      */
     public CacheWebsite(String url, String date) {
         this.url = url;
-        this.date = Util.convertStringToDate(date);
+        this.date = date;
     }
 
     /**
@@ -28,7 +28,7 @@ public class CacheWebsite implements Serializable {
      */
     public CacheWebsite(String url, Date date) {
         this.url = url;
-        this.date = date;
+        this.date = Util.convertDateToString(date);
     }
 
 
@@ -56,7 +56,7 @@ public class CacheWebsite implements Serializable {
         return url;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 

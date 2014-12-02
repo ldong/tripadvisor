@@ -27,9 +27,9 @@ public class Main {
         String content = (String)lru.get(web);
         lru.put(web, "Hi");
         System.out.println(content);
-        System.out.println(Util.getDateXDaysBeforeDateY(1, web.getDate()));
-        System.out.println(Util.getDateXDaysBeforeDateY(2, web.getDate()));
-        System.out.println(Util.getDateXDaysBeforeDateY(3, web.getDate()));
+//        System.out.println(Util.getDateXDaysBeforeDateY(1, web.getDate()));
+//        System.out.println(Util.getDateXDaysBeforeDateY(2, web.getDate()));
+//        System.out.println(Util.getDateXDaysBeforeDateY(3, web.getDate()));
 //        Util.getCollectionFromUrl();
 
         MongoClient mongoClient = null;

@@ -84,9 +84,11 @@ db.webs.insert(b);
 db.webs.find();
 ```
 
-db.webs.find({
-    $and: [
-        {"web" : "tripadvisor2.com"},
-        {versions."11/1/2014"}
-    ]
-})
+Clean DB
+```
+db.webs.remove({})
+```
+
+#Reference
+[Remove Documents]
+(http://docs.mongodb.org/manual/tutorial/remove-documents/)
