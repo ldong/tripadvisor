@@ -5,7 +5,7 @@
 2. Intellij 14.0.1
 3. Java 8
 4. Tomcat: 8.0.15
-5. ~~MySQL 5.6.21~~, ~~Firebase~~, MongoDB:
+5. MongoDB
 
 ## Instruction
 1. Install the above packages are essential
@@ -52,7 +52,7 @@ mongo
 Once in Mongo
 ``` bash
 show dbs
-use tp
+use webs
 db
 
 ```
@@ -88,6 +88,14 @@ Clean DB
 ```
 db.webs.remove({})
 ```
+
+## Walk through
+There's one assumption I have for crawler will dump the data into the DB.
+So I could fetch it from DB for the first time, after the first time fetch.
+I have put it into LRU cache. See codes for implementation details.
+
+Anyway, please see [demo](./demo/demo.mp4)
+
 
 #Reference
 [Remove Documents]
