@@ -42,7 +42,7 @@ Alternatives:
     1. [Guava Cache](http://goo.gl/PDVz9).
     2. [Apache MemLRU](http://goo.gl/4MLpWJ).
 
-3. Sample NoSQL DB schema is [here](./resource/document.json)
+3. Sample NoSQL DB schema is [here](./resource/schema.json)
 
 Question: why choose **MongoDB** over MySQL?
 
