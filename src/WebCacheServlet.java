@@ -16,7 +16,6 @@ public class WebCacheServlet extends javax.servlet.http.HttpServlet {
     }
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
-        String color = request.getParameter("color");
         String website = request.getParameter("website");
         String date = request.getParameter("date");
         CacheWebsite web = new CacheWebsite(website, date);
@@ -29,6 +28,7 @@ public class WebCacheServlet extends javax.servlet.http.HttpServlet {
                 CacheWebsiteContentTuple tuple = Util.generateCacheWebsiteContentTupleFromUrlAndDate(website, date);
                 content = tuple.getContent();
                 web = tuple.getSite();
+                date = web.getDate();
                 // update cache
                 lruCache.put(web, content);
             } catch (UnknownHostException e) {
@@ -37,6 +37,7 @@ public class WebCacheServlet extends javax.servlet.http.HttpServlet {
 
         }
         request.setAttribute("cachedWebsite", content);
+        request.setAttribute("date", date);
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 }

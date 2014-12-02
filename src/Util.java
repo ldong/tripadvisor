@@ -40,12 +40,6 @@ public class Util {
 
 
     public static CacheWebsiteContentTuple generateCacheWebsiteContentTupleFromUrlAndDate(String url, String date) throws UnknownHostException {
-        String content = getContentFromUrlByDates(url, date);
-        CacheWebsiteContentTuple tuple = new CacheWebsiteContentTuple(url, date, content);
-        return tuple;
-    }
-
-    public static String getContentFromUrlByDates(String url, String date) throws UnknownHostException {
         MongoClient mongoClient = null;
         String content = "Not Found";
         try {
@@ -76,7 +70,8 @@ public class Util {
             e.printStackTrace();
         } finally {
             mongoClient.close();
-            return content;
+            CacheWebsiteContentTuple tuple = new CacheWebsiteContentTuple(url, date, content);
+            return tuple;
         }
     }
 }

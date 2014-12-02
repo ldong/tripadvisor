@@ -23,11 +23,13 @@
 <body>
 
 <% // java code
-  String s;
+  String content, date;
   if(request.getAttribute("cachedWebsite") != null){
-    s= request.getAttribute("cachedWebsite").toString();
+    content= request.getAttribute("cachedWebsite").toString();
+    date = request.getAttribute("date").toString();
   } else {
-    s = "Hi";
+    content = "Hello, please enter the URL and date you want to lookup";
+    date = "";
   }
 %>
 
@@ -39,7 +41,10 @@
     </p>
   </form>
   <p>Web Content</p>
-  <div id="webcontent">Content: <%=s%></div>
+  <div id="webcontent">
+    <p> Cached Date: <%=date%> </p>
+    <p> Content:  <%=content%> </p>
+  </div>
 
 </body>
 </html>

@@ -71,12 +71,5 @@ public class Main {
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         System.out.println(d);
         System.out.println(dateFormat.format(d));
-
-        try {
-            System.out.println("Start");
-            System.out.println(Util.getContentFromUrlByDates("tripadvisor.com", "1/2/2014"));
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
     }
 }
