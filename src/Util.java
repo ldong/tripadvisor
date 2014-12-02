@@ -13,8 +13,7 @@ import com.mongodb.*;
 
 
 public class Util {
-    public static int DAYS = 14;
-
+    public static int MAX_NUMBER_DAYS_OF_HISTORY = 14;
     public static Date getDateXDaysBeforeDateY(int x, Date y){
         // 24 hrs in presentation of Epoch
         long day = 86400000;
@@ -63,7 +62,7 @@ public class Util {
                         break;
                     }
                     count++;
-                } while(count <= 30);
+                } while(count <= MAX_NUMBER_DAYS_OF_HISTORY);
             }
         } catch (UnknownHostException e) {
             e.printStackTrace();
