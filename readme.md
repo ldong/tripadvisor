@@ -35,7 +35,8 @@ System:
    2. 7st Sep 2014 will fetch a version from 1th Sep 2014
 
 2. Cache algorithm can various from LRU, MRU, and FIFO. In our case, for the
-purpose of simplicity, I will use LinkedHashMap with fixed size 10.
+purpose of simplicity, I've chose LRU implemented by using LinkedHashMap with
+fixed size 10.
 
 Alternatives:
 
